@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: store-project
+Implementation-Version: 1.0
+Built-By: rania
+Implementation-Vendor-Id: tn.esprit.spring
+Build-Jdk: 1.8.0_60
+Implementation-URL: https://spring.io/projects/spring-boot/store-proje
+ ct
+Created-By: Maven Integration for Eclipse
+

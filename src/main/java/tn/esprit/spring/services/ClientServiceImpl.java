@@ -39,7 +39,6 @@ public class ClientServiceImpl implements ClientService {
 			r.setPassword(u.getPassword());
 			clientrepository.save(r);
 		}
-		
 		return u;
 	}
 

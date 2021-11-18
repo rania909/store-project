@@ -19,17 +19,36 @@ public class FactureServiceImpl implements FactureService {
 		return factures;
 	}
 
+
+	
 	@Override
-	public void cancelFacture(Long id) {
-		Facture facture = facturerepository.findById(id).get();
-		facture.setActive(true);
-	    facturerepository.save(facture);
-		
+	public void deleteFacture(Long id){
+		facturerepository.deleteById(id);
 	}
 
 	@Override
 	public Facture retrieveFacture(Long id) {
 		Facture f = facturerepository.findById(id).get();
+		return f;
+	}
+	
+	@Override
+	public Facture addFacture(Facture f){
+		return facturerepository.save(f);
+	}
+	
+	@Override
+	public Facture updateFacture(Facture f){
+		if(facturerepository.existsById(f.getIdfacture())){
+			Facture sf=facturerepository.findById(f.getIdfacture()).get();
+			//f.setActive();
+			f.setDatefacture(f.getDatefacture());
+			f.setMontantfacture(f.getMontantfacture());
+			f.setMontantremise(f.getMontantremise());
+			facturerepository.save(f);
+			
+			
+		}
 		return f;
 	}
 

@@ -2,6 +2,7 @@ package tn.esprit.spring.entities;
 
 import java.io.Serializable;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,9 +12,9 @@ import javax.persistence.ManyToOne;
 import tn.esprit.spring.entities.Facture;
 import tn.esprit.spring.entities.Produit;
 @Entity
-public class DetailFacture implements Serializable {
-	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+public class DetailFacture implements Serializable {	
+@Id
+@GeneratedValue (strategy = GenerationType.IDENTITY)
 private long iddetailfacture ;
 private int quantite ;
 private float prixtotal ;
@@ -23,6 +24,8 @@ private int montantremise ;
 private Facture facture;
 @ManyToOne
 private Produit produit ;
+
+
 public long getIddetailfacture() {
 	return iddetailfacture;
 }
@@ -52,6 +55,41 @@ public int getMontantremise() {
 }
 public void setMontantremise(int montantremise) {
 	this.montantremise = montantremise;
+}
+public Facture getFacture() {
+	return facture;
+}
+public void setFacture(Facture facture) {
+	this.facture = facture;
+}
+public Produit getProduit() {
+	return produit;
+}
+public void setProduit(Produit produit) {
+	this.produit = produit;
+}
+public DetailFacture(long iddetailfacture, int quantite, float prixtotal, int pourcentageremise, int montantremise) {
+	super();
+	this.iddetailfacture = iddetailfacture;
+	this.quantite = quantite;
+	this.prixtotal = prixtotal;
+	this.pourcentageremise = pourcentageremise;
+	this.montantremise = montantremise;
+}
+public DetailFacture() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+public DetailFacture(long iddetailfacture, int quantite, float prixtotal, int pourcentageremise, int montantremise,
+		Facture facture, Produit produit) {
+	super();
+	this.iddetailfacture = iddetailfacture;
+	this.quantite = quantite;
+	this.prixtotal = prixtotal;
+	this.pourcentageremise = pourcentageremise;
+	this.montantremise = montantremise;
+	this.facture = facture;
+	this.produit = produit;
 }
 
 }

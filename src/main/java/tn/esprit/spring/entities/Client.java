@@ -102,5 +102,6 @@ public class Client implements Serializable  {
 	public void setProfession(Profession profession) {
 		this.profession = profession;
 	}
+	
 
 }
